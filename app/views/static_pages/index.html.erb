@@ -1,0 +1,22 @@
+<h1>商品列表</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>商品名</th>
+      <th>价格</th>
+      <th>规格</th>
+      <th></th>
+    </tr>
+  </thead>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= link_to product.name, pd_path( product )%></td>
+    <td><%= product.price %></td>
+    <td><%= product.size %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to "About", about_path %>

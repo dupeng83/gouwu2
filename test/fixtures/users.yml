@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  password_digest: MyString
+  gender: false
+  birthday: 2016-11-26
+
+two:
+  username: MyString
+  password_digest: MyString
+  gender: false
+  birthday: 2016-11-26

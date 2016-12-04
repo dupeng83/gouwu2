@@ -1,0 +1,9 @@
+<h1><%= @product.name %></h1>
+<p>price: <%= @product.price %></p>
+
+<%= form_for [ @product, @cart ] do |f| %>
+  <%= f.label :goods_amount %>
+  <%= f.text_field :goods_amount %>
+  
+  <%= f.submit "Add to cart", class: "btn btn-primary" %>
+<% end %>

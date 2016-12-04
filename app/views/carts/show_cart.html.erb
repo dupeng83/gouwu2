@@ -1,0 +1,24 @@
+<h1>Carts#show_cart!!!!!</h1>
+<p>商品已经成功加入购物车</p>
+
+<table>
+  <% current_user.carts.each do |item| %>
+    <tr>
+      <td><%= item.product.name %></td>
+      <td><%= item.goods_amount %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<%= form_for current_user, url: cart_submit_path do |user_form| %>
+  <%= user_form.text_field :email %>
+
+  <% current_user.carts.each do |cart| %>
+    <%= user_form.fields_for cart, index: cart.id do |cart_form|%>
+      <%= cart_form.number_field :goods_amount %>
+    <% end %>
+  <% end %>
+
+  <%= user_form.submit "去结算" %>
+<% end %>
